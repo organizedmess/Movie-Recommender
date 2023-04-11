@@ -18,6 +18,8 @@ similarity = pickle.load(open('similarity.pkl','rb'))
 #now we will reconstruct df from it
 movies_df = pd.DataFrame(movies_df)
 
+server = app.server
+
 def recommend(movie):
     movie_index = movies_df[movies_df['title'] == movie].index[0]
     distance = similarity[movie_index]
